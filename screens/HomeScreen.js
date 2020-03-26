@@ -10,84 +10,48 @@ export default function HomeScreen({navigation}) {
     <View style={styles.container}>
       <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
-          <Image
-            source={
-              __DEV__
-                ? require('../assets/images/robot-dev.png')
-                : require('../assets/images/robot-prod.png')
-            }
-            style={styles.welcomeImage}
-          />
-        </View>
-
-        <View style={styles.getStartedContainer}>
-          <Text style={styles.getStartedText}>Welcome to Game24!</Text>
+          <Text style={styles.gameTitleMath}>MATH</Text><Text style={styles.gameTitle24}>24</Text>
         </View>
 
         <View style={styles.helpContainer}>
           <Button title='Play' color="red" style={styles.testButton} onPress={() => navigation.navigate('LinksScreen')} />
         </View>
       </ScrollView>
-
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
-
-        <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>navigation/BottomTabNavigator.js</MonoText>
-        </View>
-      </View>
     </View>
   );
-}
-
-HomeScreen.navigationOptions = {
-  header: null,
-};
-
-function DevelopmentModeNotice() {
-  if (__DEV__) {
-    const learnMoreButton = (
-      <Text onPress={handleLearnMorePress} style={styles.helpLinkText}>
-        Learn more
-      </Text>
-    );
-
-    return (
-      <Text style={styles.developmentModeText}>
-        Development mode is enabled: your app will be slower but you can use useful development
-        tools. {learnMoreButton}
-      </Text>
-    );
-  } else {
-    return (
-      <Text style={styles.developmentModeText}>
-        You are not in development mode: your app will run at full speed.
-      </Text>
-    );
-  }
-}
-
-function handleLearnMorePress() {
-  WebBrowser.openBrowserAsync('https://docs.expo.io/versions/latest/workflow/development-mode/');
-}
-
-function handleHelpPress() {
-  // WebBrowser.openBrowserAsync(
-  //   'https://docs.expo.io/versions/latest/get-started/create-a-new-app/#making-your-first-change'
-  // );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#003466',
   },
-  developmentModeText: {
+  gameTitleMath: {
     marginBottom: 20,
-    color: 'rgba(0,0,0,0.4)',
-    fontSize: 14,
-    lineHeight: 19,
+    color: '#CE2B2B',
+    fontSize: 144,
+    lineHeight: 169,
     textAlign: 'center',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    letterSpacing: '-0.055em',
+//     font-family: Roboto;
+// font-style: normal;
+// font-weight: bold;
+// font-size: 144px;
+// line-height: 169px;
+// /* identical to box height */
+
+// letter-spacing: -0.055em;
+
+// color: #CE2B2B;
+
+// border: 3px solid #000000;
+// text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  },
+  gameTitle24: {
+    
   },
   contentContainer: {
     paddingTop: 30,
