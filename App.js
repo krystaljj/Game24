@@ -9,9 +9,6 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from './screens/HomeScreen'; // Start screen
 import LinksScreen from './screens/LinksScreen'; // 2nd page
 
-// import BottomTabNavigator from './navigation/BottomTabNavigator';
-// import useLinking from './navigation/useLinking';
-
 const Stack = createStackNavigator();
 
 export default function App(props) {
