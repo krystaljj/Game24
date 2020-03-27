@@ -3,8 +3,6 @@ import { Button, Image, Platform, StyleSheet, Text, TouchableOpacity, View, Pixe
 import { ScrollView } from 'react-native-gesture-handler';
 import * as WebBrowser from 'expo-web-browser';
 
-import { MonoText } from '../components/StyledText';
-
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
@@ -13,7 +11,7 @@ export default function HomeScreen({navigation}) {
       </View>
 
       <View style={styles.helpContainer}>
-        <Button title='Play' color="red" style={styles.testButton} onPress={() => navigation.navigate('LinksScreen')} />
+        <Button title='Play' color="red" style={styles.testButton} onPress={() => navigation.navigate('GameScreen')} />
       </View>
     </View>
   );

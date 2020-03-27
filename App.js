@@ -7,7 +7,7 @@ import { NavigationContainer, StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from './screens/HomeScreen'; // Start screen
-import LinksScreen from './screens/LinksScreen'; // 2nd page
+import GameScreen from './screens/GameScreen'; // Game page
 
 const Stack = createStackNavigator();
 
@@ -59,8 +59,8 @@ export default function App(props) {
               }}
              />
             <Stack.Screen
-              name="LinksScreen"
-              component={LinksScreen}
+              name="GameScreen"
+              component={GameScreen}
               options={{
                 headerShown: false,
               }}
