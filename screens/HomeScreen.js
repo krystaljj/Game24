@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Button, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Image, Platform, StyleSheet, Text, TouchableOpacity, View, PixelRatio, Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import * as WebBrowser from 'expo-web-browser';
 
@@ -8,15 +8,13 @@ import { MonoText } from '../components/StyledText';
 export default function HomeScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-        <View style={styles.welcomeContainer}>
-          <Text style={styles.gameTitleMath}>MATH</Text><Text style={styles.gameTitle24}>24</Text>
-        </View>
+      <View style={styles.welcomeContainer}>
+        <Text style={styles.gameTitleMath}>MATH</Text><Text style={styles.gameTitle24}>24</Text>
+      </View>
 
-        <View style={styles.helpContainer}>
-          <Button title='Play' color="red" style={styles.testButton} onPress={() => navigation.navigate('LinksScreen')} />
-        </View>
-      </ScrollView>
+      <View style={styles.helpContainer}>
+        <Button title='Play' color="red" style={styles.testButton} onPress={() => navigation.navigate('LinksScreen')} />
+      </View>
     </View>
   );
 }
@@ -32,23 +30,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#003466',
   },
   gameTitleMath: {
-    marginBottom: 20,
     color: '#CE2B2B',
-    fontSize: 144,
+    fontSize: 72,
     lineHeight: 169,
-    textAlign: 'center',
     ...fontFamilyPicker,  // Decides what font to use depending on web or android
     fontStyle: 'normal',
     fontWeight: 'bold',
-    letterSpacing: '-0.055em',
-    // borderWidth: 3,
-    borderStyle: 'solid',
-    // borderColor: '#000000',
-    textShadowColor: 'rgba(0, 0, 0, 0.25)',
-    textShadowRadius: 4,
+    // letterSpacing: '-0.055em',
   },
   gameTitle24: {
-    
+    color: '#CE2B2B',
+    fontSize: 140,
+    lineHeight: 260,
+    ...fontFamilyPicker,  // Decides what font to use depending on web or android
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    // letterSpacing: '-0.055em',
+    // textShadowColor:'#585858',
+    // textShadowOffset:{width: 5, height: 5},
+    // textShadowRadius:10,
   },
   contentContainer: {
     paddingTop: 30,
@@ -57,6 +57,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 10,
     marginBottom: 20,
+    flexDirection: 'row',
+    textAlign: 'center',
+    display: 'flex',
+    paddingLeft: 15,
   },
   welcomeImage: {
     width: 100,
