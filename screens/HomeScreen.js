@@ -10,9 +10,9 @@ export default function HomeScreen({navigation}) {
         <Text style={styles.gameTitleMath}>MATH</Text><Text style={styles.gameTitle24}>24</Text>
       </View>
 
-      <View style={styles.helpContainer}>
-        <Button title='Play' color="red" style={styles.testButton} onPress={() => navigation.navigate('GameScreen')} />
-      </View>
+      <TouchableOpacity style={styles.playContainer} onPress={() => navigation.navigate('GameScreen')}>
+        <Text style={styles.playButton}>Start</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -26,6 +26,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#003466',
+    alignItems: 'center',
+
   },
   gameTitleMath: {
     color: '#CE2B2B',
@@ -57,8 +59,15 @@ const styles = StyleSheet.create({
     display: 'flex',
     paddingLeft: 15,
   },
-  helpContainer: {
-    marginTop: 15,
-    alignItems: 'center',
+  playContainer: {
+    width: 200,
+    height: 80,
+    backgroundColor: '#CE2B2B',
+    borderRadius: 10,
   },
+  playButton: {
+    fontSize: 60,
+    ...fontFamilyPicker,
+    alignSelf: 'center',
+  }
 });
