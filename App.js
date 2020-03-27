@@ -27,10 +27,10 @@ export default function App(props) {
         setInitialNavigationState(await getInitialState());
 
         // Load fonts
-        await Font.loadAsync({
-          ...Ionicons.font,
-          'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf'),
-        });
+        // await Font.loadAsync({
+        //   ...Ionicons.font,
+        //   'Roboto': require('.\\assets\\fonts\\Roboto-Regular.ttf'),
+        // });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
         console.warn(e);

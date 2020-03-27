@@ -21,6 +21,11 @@ export default function HomeScreen({navigation}) {
   );
 }
 
+const fontFamilyPicker = Platform.select({
+  android: { fontFamily: 'Roboto' },
+  web: { fontFamily: './assets/fonts/Roboto' }
+})
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -32,23 +37,15 @@ const styles = StyleSheet.create({
     fontSize: 144,
     lineHeight: 169,
     textAlign: 'center',
-    fontFamily: 'Roboto',
+    ...fontFamilyPicker,  // Decides what font to use depending on web or android
     fontStyle: 'normal',
     fontWeight: 'bold',
     letterSpacing: '-0.055em',
-//     font-family: Roboto;
-// font-style: normal;
-// font-weight: bold;
-// font-size: 144px;
-// line-height: 169px;
-// /* identical to box height */
-
-// letter-spacing: -0.055em;
-
-// color: #CE2B2B;
-
-// border: 3px solid #000000;
-// text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    // borderWidth: 3,
+    borderStyle: 'solid',
+    // borderColor: '#000000',
+    textShadowColor: 'rgba(0, 0, 0, 0.25)',
+    textShadowRadius: 4,
   },
   gameTitle24: {
     
