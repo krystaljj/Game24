@@ -1,11 +1,9 @@
 import * as React from 'react';
-import { TouchableOpacity, StyleSheet, Text, View, ScrollView } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import { RectButton } from 'react-native-gesture-handler';
+import { TouchableOpacity, StyleSheet, Text, View } from 'react-native';
 
 
 export default class GameScreen extends React.Component {
-  constructor () {
+  constructor() {
     super();
     this.state = {
       time: 0,
@@ -14,11 +12,11 @@ export default class GameScreen extends React.Component {
 
   render() {
     return (
-      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+      <View style={styles.container}>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
           <Text>Main Menu</Text>
         </TouchableOpacity>
-      </ScrollView>
+      </View>
     );
   }
 }
@@ -27,8 +25,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fafafa',
-  },
-  contentContainer: {
-    paddingTop: 15,
   },
 });

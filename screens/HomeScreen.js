@@ -1,20 +1,15 @@
 import * as React from 'react';
-import { Button, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function HomeScreen({navigation}) {
+export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <View style={styles.welcomeContainer}>
-        <Text style={styles.gameTitleMath}>MATH</Text><Text style={styles.gameTitle24}>24</Text>
-      </View>
-
-      <TouchableOpacity style={styles.playContainer} onPress={() => navigation.navigate('GameScreen')}>
-        <Text style={styles.playButton}>Start</Text>
-      </TouchableOpacity>
+      <Text>Game24!</Text>
     </View>
   );
 }
 
+// We need this when using a custom font
 const fontFamilyPicker = Platform.select({
   android: { fontFamily: 'Roboto' },
   web: { fontFamily: './assets/fonts/Roboto' }
@@ -23,44 +18,7 @@ const fontFamilyPicker = Platform.select({
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#003466',
+    backgroundColor: '#FFF',
     alignItems: 'center',
-
   },
-  gameTitleMath: {
-    color: '#CE2B2B',
-    fontSize: 72,
-    lineHeight: 169,
-    ...fontFamilyPicker,  // Decides what font to use depending on web or android
-    fontStyle: 'normal',
-    fontWeight: 'bold',
-  },
-  gameTitle24: {
-    color: '#CE2B2B',
-    fontSize: 140,
-    lineHeight: 260,
-    ...fontFamilyPicker,  // Decides what font to use depending on web or android
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-  },
-  welcomeContainer: {
-    alignItems: 'center',
-    marginTop: 10,
-    marginBottom: 20,
-    flexDirection: 'row',
-    textAlign: 'center',
-    display: 'flex',
-    paddingLeft: 15,
-  },
-  playContainer: {
-    width: 200,
-    height: 80,
-    backgroundColor: '#CE2B2B',
-    borderRadius: 10,
-  },
-  playButton: {
-    fontSize: 60,
-    ...fontFamilyPicker,
-    alignSelf: 'center',
-  }
 });
