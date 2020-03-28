@@ -3,31 +3,30 @@ import { TouchableOpacity, StyleSheet, Text, View, ScrollView } from 'react-nati
 import { Ionicons } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 
-export default function GameScreen({navigation}) {
-  return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
-      <OptionButton
-        icon="md-school"
-        label="Go Home"
-        onPress={() => navigation.navigate('HomeScreen')}
-      />
-    </ScrollView>
-  );
-}
 
-function OptionButton({ icon, label, onPress, isLastOption }) {
-  return (
-    <RectButton style={[styles.option, isLastOption && styles.lastOption]} onPress={onPress}>
-      <View style={{ flexDirection: 'row' }}>
-        <View style={styles.optionIconContainer}>
-          <Ionicons name={icon} size={22} color="rgba(0,0,0,0.35)" />
-        </View>
-        <View style={styles.optionTextContainer}>
-          <Text style={styles.optionText}>{label}</Text>
-        </View>
-      </View>
-    </RectButton>
-  );
+export default class GameScreen extends React.Component {
+  constructor () {
+    super();
+    this.state = {
+      time: 0,
+    };
+  }
+
+  incrementCount () {
+    this.setState({
+      counter: this.state.counter + 1,
+    });
+  }
+
+  render() {
+    return (
+      <ScrollView style={styles.container} contentContainerStyle={styles.contentContainer}>
+        <TouchableOpacity style={styles.playContainer} onPress={() => this.props.navigation.navigate('HomeScreen')}>
+          <Text style={styles.playButton}>1</Text>
+        </TouchableOpacity>
+      </ScrollView>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
