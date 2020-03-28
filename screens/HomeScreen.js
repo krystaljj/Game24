@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
     ...fontFamilyPicker,  // Decides what font to use depending on web or android
     fontStyle: 'normal',
     fontWeight: 'bold',
-    // letterSpacing: '-0.055em',
   },
   gameTitle24: {
     color: '#CE2B2B',
@@ -43,10 +42,6 @@ const styles = StyleSheet.create({
     ...fontFamilyPicker,  // Decides what font to use depending on web or android
     fontStyle: 'normal',
     fontWeight: 'normal',
-    // letterSpacing: '-0.055em',
-    // textShadowColor:'#585858',
-    // textShadowOffset:{width: 5, height: 5},
-    // textShadowRadius:10,
   },
   welcomeContainer: {
     alignItems: 'center',
