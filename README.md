@@ -1,1 +1,2 @@
-# Game24
+# Game24 Template for RWC
+ 
