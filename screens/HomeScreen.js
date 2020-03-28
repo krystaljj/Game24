@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { Button, Image, Platform, StyleSheet, Text, TouchableOpacity, View, PixelRatio, Dimensions } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
+import { Button, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function HomeScreen({navigation}) {
   return (
@@ -20,7 +18,7 @@ export default function HomeScreen({navigation}) {
 const fontFamilyPicker = Platform.select({
   android: { fontFamily: 'Roboto' },
   web: { fontFamily: './assets/fonts/Roboto' }
-})
+});
 
 const styles = StyleSheet.create({
   container: {
